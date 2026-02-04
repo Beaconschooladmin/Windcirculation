@@ -1,0 +1,2225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geography | Iftikhar Ahmed</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,700;1,600&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+    <!-- 
+        Palette Name: Vibrant Topography
+        - Deep Navy (Primary): #0f172a
+        - Sky Blue (Accent): #0ea5e9
+        - Terracotta (Earth): #c2410c
+        - Background: #f8fafc
+    -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+            scroll-behavior: smooth;
+        }
+
+        .font-serif {
+            font-family: 'Crimson Pro', serif;
+        }
+
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin: auto;
+            height: 350px;
+            max-height: 400px;
+        }
+
+        /* Styling the teacher photo to look professional */
+        .profile-frame {
+            position: relative;
+            display: inline-block;
+        }
+        .profile-frame::after {
+            content: '';
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            right: -15px;
+            bottom: -15px;
+            border: 4px solid #0ea5e9;
+            z-index: -1;
+            border-radius: 1rem;
+        }
+
+        .gradient-text {
+            background: linear-gradient(to right, #0ea5e9, #c2410c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        @media (max-width: 768px) {
+            .chart-container {
+                height: 300px;
+            }
+        }
+  
+                        <h3 class="font-bold text-slate-800">Physical Geography</h3>
+                        <p class="text-xs text-slate-500 mt-2">Exploration of Earth's natural systems, atmospheric patterns, and oceanic circulation.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex-1">
+                        <span class="block text-3xl mb-2">&#128506;</span> <!-- Unicode Map -->
+                        <h3 class="font-bold text-slate-800">Human Geography</h3>
+                        <p class="text-xs text-slate-500 mt-2">Analyzing the dynamic relationship between human societies and their environment.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Topics Grid -->
+    <section id="topics" class="bg-slate-900 py-24 px-6 text-white">
+        <div class="max-w-6xl mx-auto">
+            <div class="mb-16 text-center">
+                <h2 class="text-4xl font-bold mb-4 serif">Foundations of Geography</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto">A comprehensive breakdown of the four critical spheres of our planetary system.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Lithosphere -->
+                <div class="p-8 bg-white/5 rounded-3xl border border-white/10 hover:bg-white/10 transition group">
+                    <div class="w-12 h-12 bg-orange-600 rounded-xl mb-6 flex items-center justify-center font-bold text-xl">L</div>
+                    <h3 class="text-xl font-bold mb-3">Lithosphere</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">The rigid outer part of the earth, consisting of the crust and upper mantle.</p>
+                </div>
+                <!-- Atmosphere -->
+                <div class="p-8 bg-white/5 rounded-3xl border border-white/10 hover:bg-white/10 transition">
+                    <div class="w-12 h-12 bg-sky-600 rounded-xl mb-6 flex items-center justify-center font-bold text-xl">A</div>
+                    <h3 class="text-xl font-bold mb-3">Atmosphere</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">The envelope of gases surrounding the earth, driving global weather and wind systems.</p>
+                </div>
+                <!-- Hydrosphere -->
+                <div class="p-8 bg-white/5 rounded-3xl border border-white/10 hover:bg-white/10 transition">
+                    <div class="w-12 h-12 bg-blue-600 rounded-xl mb-6 flex items-center justify-center font-bold text-xl">H</div>
+                    <h3 class="text-xl font-bold mb-3">Hydrosphere</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">All the waters on the earth's surface, including oceans, lakes, and rivers.</p>
+                </div>
+                <!-- Biosphere -->
+                <div class="p-8 bg-white/5 rounded-3xl border border-white/10 hover:bg-white/10 transition">
+                    <div class="w-12 h-12 bg-emerald-600 rounded-xl mb-6 flex items-center justify-center font-bold text-xl">B</div>
+                    <h3 class="text-xl font-bold mb-3">Biosphere</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">The global sum of all ecosystems, where life interacts with geological forces.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Data Insights -->
+    <section id="data" class="py-24 px-6 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex flex-col lg:flex-row gap-16 items-center">
+                <div class="lg:w-1/2">
+                    <h2 class="text-4xl font-black text-slate-900 mb-6 leading-tight">Quantifying our <br><span class="text-sky-600">Blue Planet</span></h2>
+                    <p class="text-slate-600 mb-8 leading-relaxed">
+                        Geography is a data-driven science. By analyzing the composition of the Earth's surface, we can better understand resource distribution and climatic zones.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-end border-b-2 border-slate-100 pb-2">
+                            <span class="text-slate-500 font-bold uppercase text-xs">Ocean Coverage</span>
+                            <span class="text-2xl font-black text-blue-600">71%</span>
+                        </div>
+                        <div class="flex justify-between items-end border-b-2 border-slate-100 pb-2">
+                            <span class="text-slate-500 font-bold uppercase text-xs">Land Mass</span>
+                            <span class="text-2xl font-black text-orange-700">29%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 bg-slate-50 p-8 rounded-3xl border border-slate-100">
+                    <h4 class="text-center font-bold text-slate-700 mb-6 uppercase text-xs tracking-widest">Global Surface Distribution</h4>
+                    <div class="chart-container">
+                        <canvas id="earthChart"></canvas>
+                    </div>
+                    <p class="text-center text-[10px] text-slate-400 mt-6 italic">Source: United Nations Geospatial Data Synthesis</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 text-white py-20 px-6">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl font-black mb-8">Contact & Collaboration</h2>
+            <p class="text-slate-400 mb-12">I specialize in providing standard forms of English and structured Social Science insights. Reach out for academic resources or session bookings.</p>
+            
+            <div class="flex flex-wrap justify-center gap-8 mb-16">
+                <div class="text-center">
+                    <span class="block text-2xl mb-1 text-sky-500 font-bold">Iftikhar Ahmed</span>
+                    <span class="text-xs uppercase tracking-widest text-slate-500">Geography Educator</span>
+                </div>
+            </div>
+            
+            <div class="pt-8 border-t border-white/10 text-slate-500 text-xs">
+                &copy; 2024 Iftikhar Ahmed. Optimized for iPad & iPhone Learning Environments.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Utility for label wrapping (Mandatory per constraints)
+        function wrapLabel(label) {
+            if (typeof label !== 'string') return label;
+            if (label.length <= 16) return label;
+            const words = label.split(' ');
+            const lines = [];
+            let currentLine = words[0];
+            for (let i = 1; i < words.length; i++) {
+                if ((currentLine + " " + words[i]).length <= 16) {
+                    currentLine += " " + words[i];
+                } else {
+                    lines.push(currentLine);
+                    currentLine = words[i];
+                }
+            }
+            lines.push(currentLine);
+            return lines;
+        }
+
+        // Tooltip title callback (Mandatory per constraints)
+        const tooltipConfig = {
+            callbacks: {
+                title: function(tooltipItems) {
+                    const item = tooltipItems[0];
+                    let label = item.chart.data.labels[item.dataIndex];
+                    return Array.isArray(label) ? label.join(' ') : label;
+                }
+            }
+        };
+
+        // Initialize Earth Distribution Chart
+        const ctx = document.getElementById('earthChart').getContext('2d');
+        const earthLabels = ['Pacific Ocean', 'Atlantic Ocean', 'Indian Ocean', 'All Land Masses', 'Other Water Bodies'];
+        
+        new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: earthLabels.map(wrapLabel),
+                datasets: [{
+                    data: [30, 20, 15, 29, 6],
+                    backgroundColor: [
+                        '#1e3a8a', // Deep Blue
+                        '#1e40af', // Navy
+                        '#2563eb', // Blue
+                        '#c2410c', // Terracotta
+                        '#60a5fa'  // Light Blue
+                    ],
+                    borderWidth: 0,
+                    hoverOffset: 20
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                cutout: '70%',
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            padding: 20,
+                            font: { size: 10, weight: 'bold' }
+                        }
+                    },
+                    tooltip: tooltipConfig
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ocean Currents: The Global Conveyor Belt | By Iftikhar Ahmed</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <!-- 
+        Palette Name: Deep Sea & Coral
+        - Midnight Blue: #0f172a
+        - Tropical Teal: #0d9488
+        - Vivid Coral: #fb7185
+        - Deep Azure: #1e40af
+        - Surface: #ffffff
+        - Background: #f8fafc
+    -->
+    <style>
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+        }
+
+        .serif {
+            font-family: 'Libre Baskerville', serif;
+        }
+
+        /* Chart Container Rules - MANDATORY */
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 400px;
+        }
+
+        @media (max-width: 768px) {
+            .chart-container {
+                height: 300px;
+            }
+        }
+
+        .current-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .current-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+        }
+
+        /* Profile transition effect */
+        .profile-hero {
+            background: linear-gradient(135deg, #0f172a 0%, #1e40af 100%);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- SECTION 0: Professional Teacher Introduction (NEW) -->
+    <section id="profile" class="profile-hero text-white py-16 px-6">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
+            <div class="w-48 h-48 md:w-64 md:h-64 rounded-full border-4 border-teal-500 overflow-hidden shadow-2xl shrink-0">
+                <!-- Using the generated professional image -->
+                <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&q=80&w=400" 
+                     onerror="this.src='https://via.placeholder.com/400x400?text=Iftikhar+Ahmed'"
+                     alt="Iftikhar Ahmed" 
+                     class="w-full h-full object-cover">
+            </div>
+            <div class="text-center md:text-left">
+                <h1 class="text-4xl md:text-6xl font-black mb-4">Iftikhar Ahmed</h1>
+                <p class="text-xl md:text-2xl text-teal-300 font-semibold mb-4">Expert Educator | Social Science & English</p>
+                <div class="flex flex-wrap justify-center md:justify-start gap-4 mb-6">
+                    <span class="bg-white/10 px-4 py-2 rounded-lg text-sm border border-white/20">Class 8 Specialist</span>
+                    <span class="bg-white/10 px-4 py-2 rounded-lg text-sm border border-white/20">Class 9 Specialist</span>
+                    <span class="bg-white/10 px-4 py-2 rounded-lg text-sm border border-white/20">Class 10 Specialist</span>
+                </div>
+                <p class="text-slate-300 max-w-xl leading-relaxed">
+                    Dedicated to providing standard forms of English and comprehensive Social Science insights to help students master global concepts. Welcome to today's lesson on Oceanic Systems.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md shadow-sm border-b border-slate-100 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="font-bold text-slate-800">Iftikhar's Classroom</div>
+            <div class="hidden md:flex gap-8 text-sm font-semibold text-slate-600 uppercase tracking-widest">
+                <a href="#profile" class="hover:text-teal-600 transition">Profile</a>
+                <a href="#drivers" class="hover:text-teal-600 transition">The Drivers</a>
+                <a href="#classification" class="hover:text-teal-600 transition">Classification</a>
+                <a href="#gyres" class="hover:text-teal-600 transition">Global Gyres</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="bg-slate-950 text-white pt-20 pb-28 px-6 relative overflow-hidden">
+        <div class="max-w-6xl mx-auto text-center relative z-10">
+            <span class="inline-block px-4 py-1 bg-teal-500/20 border border-teal-500/50 text-teal-400 text-xs font-bold uppercase tracking-widest rounded-full mb-6">Social Science Unit: Marine Geography</span>
+            <h2 class="text-4xl md:text-7xl font-black mb-6 tracking-tight">Ocean Currents</h2>
+            <p class="text-xl md:text-2xl text-slate-400 max-w-3xl mx-auto font-light leading-relaxed">
+                The massive, continuous movement of seawater driven by gravity, wind, and water density.
+            </p>
+        </div>
+        <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none line-height-0">
+            <div class="h-12 w-full bg-slate-900" style="clip-path: ellipse(60% 100% at 50% 100%);"></div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-6 -mt-16 relative z-20 pb-20 space-y-24">
+
+        <!-- SECTION 1: Key Performance Indicators -->
+        <div id="drivers" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-white p-8 rounded-2xl shadow-xl border-b-4 border-blue-600">
+                <h3 class="text-sm font-bold text-slate-400 uppercase mb-2">Primary Driver</h3>
+                <p class="text-2xl font-extrabold text-slate-800 italic">Prevailing Winds</p>
+                <p class="text-xs text-slate-500 mt-2">Planetary winds like Trades and Westerlies push surface waters.</p>
+            </div>
+            <div class="bg-white p-8 rounded-2xl shadow-xl border-b-4 border-teal-600">
+                <h3 class="text-sm font-bold text-slate-400 uppercase mb-2">Density Driver</h3>
+                <p class="text-2xl font-extrabold text-slate-800 italic">Thermohaline</p>
+                <p class="text-xs text-slate-500 mt-2">Differences in temperature and salinity cause deep-water flow.</p>
+            </div>
+            <div class="bg-white p-8 rounded-2xl shadow-xl border-b-4 border-rose-600">
+                <h3 class="text-sm font-bold text-slate-400 uppercase mb-2">Deflection Force</h3>
+                <p class="text-2xl font-extrabold text-slate-800 italic">Coriolis Effect</p>
+                <p class="text-xs text-slate-500 mt-2">The Earth's rotation bends currents Right (NH) and Left (SH).</p>
+            </div>
+        </div>
+
+        <!-- SECTION 2: Classification Analysis -->
+        <section id="classification" class="space-y-12">
+            <div class="max-w-3xl">
+                <h2 class="text-3xl font-bold text-slate-900 mb-4 serif">The Thermal Dichotomy</h2>
+                <p class="text-slate-600 leading-relaxed">
+                    Ocean currents are primarily classified based on their temperature relative to the surrounding water. This temperature difference dictates their influence on the local climate.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center bg-white p-8 md:p-12 rounded-3xl shadow-sm border border-slate-100">
+                <div>
+                    <h4 class="text-center font-bold text-slate-700 mb-8 uppercase text-xs tracking-widest">Temperature Comparison of Major Currents</h4>
+                    <div class="chart-container">
+                        <canvas id="tempChart"></canvas>
+                    </div>
+                </div>
+                <div class="space-y-8">
+                    <div class="flex gap-6">
+                        <div class="w-12 h-12 shrink-0 bg-rose-100 rounded-xl flex items-center justify-center text-rose-600 text-2xl font-bold">W</div>
+                        <div>
+                            <h5 class="text-lg font-bold text-slate-800">Warm Currents</h5>
+                            <p class="text-sm text-slate-500">Flow from the Equator toward the Poles. They bring warm, humid air, increasing temperature and rainfall.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-6">
+                        <div class="w-12 h-12 shrink-0 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 text-2xl font-bold">C</div>
+                        <div>
+                            <h5 class="text-lg font-bold text-slate-800">Cold Currents</h5>
+                            <p class="text-sm text-slate-500">Flow from the Poles toward the Equator. They bring cool, dry air, often creating deserts.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: Global Gyres -->
+        <section id="gyres" class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div class="order-2 md:order-1">
+                <div class="chart-container" style="height: 400px;">
+                    <canvas id="gyreChart"></canvas>
+                </div>
+            </div>
+            <div class="order-1 md:order-2">
+                <h2 class="text-3xl font-bold text-slate-900 mb-6 serif">The Five Great Gyres</h2>
+                <p class="text-slate-600 mb-6 leading-relaxed">
+                    A gyre is a large system of circulating ocean currents. They are essentially circular 'loops' formed by wind and the Coriolis effect.
+                </p>
+                <div class="grid grid-cols-2 gap-4 text-xs font-bold uppercase tracking-tight">
+                    <div class="p-4 bg-slate-100 rounded-lg text-slate-700 border-l-4 border-teal-500">North Atlantic Gyre</div>
+                    <div class="p-4 bg-slate-100 rounded-lg text-slate-700 border-l-4 border-teal-500">South Atlantic Gyre</div>
+                    <div class="p-4 bg-slate-100 rounded-lg text-slate-700 border-l-4 border-teal-500">North Pacific Gyre</div>
+                    <div class="p-4 bg-slate-100 rounded-lg text-slate-700 border-l-4 border-teal-500">South Pacific Gyre</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: Impact Analysis -->
+        <section class="space-y-12">
+            <div class="text-center">
+                <h2 class="text-3xl font-bold text-slate-900 serif">Impact on Man and Environment</h2>
+                <p class="text-slate-500 mt-2">Connecting geography to human life.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="current-card bg-white p-8 rounded-3xl shadow-sm border border-slate-100">
+                    <div class="text-4xl mb-4 text-rose-500">&#127777;</div>
+                    <h4 class="text-xl font-bold text-slate-800 mb-3">Climate</h4>
+                    <p class="text-sm text-slate-500">Warm currents keep ports ice-free; cold currents create deserts.</p>
+                </div>
+                <div class="current-card bg-white p-8 rounded-3xl shadow-sm border border-slate-100">
+                    <div class="text-4xl mb-4 text-teal-600">&#128031;</div>
+                    <h4 class="text-xl font-bold text-slate-800 mb-3">Fishing</h4>
+                    <p class="text-sm text-slate-500">Where warm and cold currents meet, plankton thrives—perfect for fish.</p>
+                </div>
+                <div class="current-card bg-white p-8 rounded-3xl shadow-sm border border-slate-100">
+                    <div class="text-4xl mb-4 text-blue-600">&#128674;</div>
+                    <h4 class="text-xl font-bold text-slate-800 mb-3">Navigation</h4>
+                    <p class="text-sm text-slate-500">Sailing with the current saves time and fuel for massive cargo ships.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-slate-950 text-slate-500 py-16 px-6 text-center text-sm border-t border-slate-900">
+        <div class="max-w-4xl mx-auto space-y-4">
+            <p class="font-bold text-slate-400">Lesson prepared by Iftikhar Ahmed</p>
+            <p>Standard Reference Notes for Class 8, 9, & 10 Geography.</p>
+            <div class="flex justify-center gap-6 pt-4 grayscale opacity-50">
+                <span class="text-2xl">&#127754;</span>
+                <span class="text-2xl">&#9973;</span>
+                <span class="text-2xl">&#127757;</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function wrapLabel(label) {
+            if (typeof label !== 'string') return label;
+            if (label.length <= 16) return label;
+            const words = label.split(' ');
+            const lines = [];
+            let currentLine = words[0];
+            for (let i = 1; i < words.length; i++) {
+                if ((currentLine + " " + words[i]).length <= 16) {
+                    currentLine += " " + words[i];
+                } else {
+                    lines.push(currentLine);
+                    currentLine = words[i];
+                }
+            }
+            lines.push(currentLine);
+            return lines;
+        }
+
+        const tooltipConfig = {
+            callbacks: {
+                title: function(tooltipItems) {
+                    const item = tooltipItems[0];
+                    let label = item.chart.data.labels[item.dataIndex];
+                    return Array.isArray(label) ? label.join(' ') : label;
+                }
+            }
+        };
+
+        const ctxTemp = document.getElementById('tempChart').getContext('2d');
+        new Chart(ctxTemp, {
+            type: 'bar',
+            data: {
+                labels: ['Gulf Stream (W)', 'Peru Current (C)', 'Kuroshio (W)', 'Benguela (C)', 'Brazil (W)'].map(wrapLabel),
+                datasets: [{
+                    label: 'Surface Temp (°C)',
+                    data: [27, 16, 26, 17, 25],
+                    backgroundColor: ['#fb7185', '#3b82f6', '#fb7185', '#3b82f6', '#fb7185'],
+                    borderRadius: 8
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false }, tooltip: tooltipConfig }
+            }
+        });
+
+        const ctxGyre = document.getElementById('gyreChart').getContext('2d');
+        new Chart(ctxGyre, {
+            type: 'radar',
+            data: {
+                labels: ['Wind Push', 'Coriolis', 'Salinity', 'Density', 'Shape'].map(wrapLabel),
+                datasets: [
+                    {
+                        label: 'Surface Drivers',
+                        data: [95, 90, 40, 50, 85],
+                        borderColor: '#0d9488',
+                        backgroundColor: 'rgba(13, 148, 136, 0.2)'
+                    },
+                    {
+                        label: 'Deep Drivers',
+                        data: [20, 10, 95, 98, 40],
+                        borderColor: '#1e40af',
+                        backgroundColor: 'rgba(30, 64, 175, 0.2)'
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { tooltip: tooltipConfig, legend: { position: 'bottom' } }
+            }
+        });
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primary Wind Circulation: The Global Engine</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap" rel="stylesheet">
+
+    <!-- Custom Palette & Styling -->
+    <!-- 
+        Palette Name: Vibrant Sky & Solar
+        Hex Codes:
+        - Primary Dark (Deep Azure): #0c4a6e (sky-900)
+        - Primary Light (Bright Cyan): #06b6d4 (cyan-500)
+        - Accent Hot (Solar Orange): #f97316 (orange-500)
+        - Accent Cold (Ice Blue): #3b82f6 (blue-500)
+        - Background: #f0f9ff (sky-50)
+        - Surface: #ffffff
+    -->
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f9ff;
+            color: #0f172a;
+        }
+        
+        /* Chart Container Rules - MANDATORY */
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px; /* Max width to prevent stretching */
+            height: 400px;    /* Base height */
+            max-height: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        @media (max-width: 640px) {
+            .chart-container {
+                height: 300px;
+                max-height: 300px;
+            }
+        }
+
+        /* Custom scrollbar for clean look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #06b6d4; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #0c4a6e; 
+        }
+    </style>
+    <!-- Narrative Plan Summary:
+         1. Header: Hook the user with the concept of the Earth's "breathing" mechanism.
+         2. The Drivers: Explaining the 'Engine' (Heat, Pressure, Coriolis).
+         3. The Machine (3-Cell Model): Visualizing the latitudinal zones (Hadley, Ferrel, Polar) using a Floating Bar Chart.
+         4. The Pulse (Pressure Belts): Line chart showing the High/Low pressure oscillation.
+         5. The Output (Winds): Detailed cards on Trade Winds, Westerlies, Easterlies.
+         6. Terminology: Glossary of key sailor terms (ITCZ, Horse Latitudes).
+         7. Footer: Credits.
+    -->
+    <!-- NO SVG CONFIRMATION: No SVG tags or files are used in this document. All graphics are CSS/HTML or Canvas-based. -->
+    <!-- NO MERMAID JS CONFIRMATION: No Mermaid JS is used. Diagrams are CSS/HTML structures. -->
+</head>
+<body class="antialiased">
+
+    <!-- Sticky Nav -->
+    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md shadow-sm border-b border-cyan-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex-shrink-0 flex items-center gap-2">
+                    <span class="text-3xl text-orange-500">&#9728;</span> <!-- Unicode Sun -->
+                    <span class="font-bold text-xl tracking-tight text-slate-800">Wind<span class="text-cyan-600">Circulation</span></span>
+                </div>
+                <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-600">
+                    <a href="#drivers" class="hover:text-cyan-600 transition">Drivers</a>
+                    <a href="#cells" class="hover:text-cyan-600 transition">3-Cell Model</a>
+                    <a href="#winds" class="hover:text-cyan-600 transition">Wind Types</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="bg-gradient-to-r from-sky-900 to-cyan-800 text-white py-20 px-4">
+        <div class="max-w-5xl mx-auto text-center">
+            <h1 class="text-4xl md:text-6xl font-black mb-6 leading-tight">
+                The Earth's Atmospheric Engine
+            </h1>
+            <p class="text-xl md:text-2xl text-cyan-100 font-light max-w-3xl mx-auto">
+                Understanding Primary Wind Circulation: The permanent, large-scale movements of air that drive our planet's climate.
+            </p>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-20">
+
+        <!-- SECTION 1: The Drivers -->
+        <section id="drivers">
+            <div class="mb-10 text-center max-w-3xl mx-auto">
+                <h2 class="text-3xl font-bold text-slate-800 mb-4">What Drives the Wind?</h2>
+                <p class="text-slate-600 text-lg">
+                    Primary circulation isn't random. It is a calculated response to the Earth's imbalance of energy, governed by three fundamental physical forces.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1: Differential Heating -->
+                <div class="bg-white rounded-xl shadow-lg border-t-4 border-orange-500 p-8 hover:shadow-xl transition-shadow duration-300">
+                    <div class="text-5xl text-orange-500 mb-4 text-center">&#127777;</div> <!-- Unicode Thermometer -->
+                    <h3 class="text-xl font-bold text-slate-800 mb-3 text-center">1. Differential Heating</h3>
+                    <p class="text-slate-600 leading-relaxed text-sm">
+                        The Sun heats the Equator directly, while the Poles receive slanting rays. This temperature difference creates the initial push: hot air rises at the Equator, and cold air sinks at the Poles.
+                    </p>
+                </div>
+
+                <!-- Card 2: Pressure Belts -->
+                <div class="bg-white rounded-xl shadow-lg border-t-4 border-cyan-500 p-8 hover:shadow-xl transition-shadow duration-300">
+                    <div class="text-5xl text-cyan-500 mb-4 text-center">&#128201;</div> <!-- Unicode Chart -->
+                    <h3 class="text-xl font-bold text-slate-800 mb-3 text-center">2. Pressure Gradients</h3>
+                    <p class="text-slate-600 leading-relaxed text-sm">
+                        Nature abhors a vacuum. Air constantly rushes from areas of <strong>High Pressure</strong> (accumulated, heavy air) to areas of <strong>Low Pressure</strong> (rising, light air), creating flow.
+                    </p>
+                </div>
+
+                <!-- Card 3: Coriolis Force -->
+                <div class="bg-white rounded-xl shadow-lg border-t-4 border-blue-600 p-8 hover:shadow-xl transition-shadow duration-300">
+                    <div class="text-5xl text-blue-600 mb-4 text-center">&#127757;</div> <!-- Unicode Globe -->
+                    <h3 class="text-xl font-bold text-slate-800 mb-3 text-center">3. Coriolis Force</h3>
+                    <p class="text-slate-600 leading-relaxed text-sm">
+                        Because the Earth rotates, winds don't fly straight. They are deflected to the <strong>Right</strong> in the Northern Hemisphere and to the <strong>Left</strong> in the Southern Hemisphere (Ferrel’s Law).
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: The Three-Cell Model (Chart.js) -->
+        <section id="cells" class="bg-white rounded-2xl shadow-xl p-8 md:p-12 border border-slate-100">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="inline-block bg-cyan-100 text-cyan-800 font-bold px-3 py-1 rounded-full text-xs uppercase tracking-wide mb-4">Global Structure</div>
+                    <h2 class="text-3xl font-bold text-slate-900 mb-6">The Three-Cell Model</h2>
+                    <p class="text-slate-600 mb-6 leading-relaxed">
+                        To redistribute heat, the atmosphere organizes itself into three distinct circulation cells in each hemisphere. These cells act like conveyor belts, moving heat from the equator toward the poles.
+                    </p>
+                    
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <span class="flex-shrink-0 h-6 w-6 flex items-center justify-center rounded-full bg-orange-100 text-orange-600 font-bold text-sm mt-1">A</span>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-bold text-slate-800">Hadley Cell (0°–30°)</h4>
+                                <p class="text-slate-500 text-sm">Driven by intense equatorial heat. Air rises at 0° and sinks at 30°.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="flex-shrink-0 h-6 w-6 flex items-center justify-center rounded-full bg-cyan-100 text-cyan-600 font-bold text-sm mt-1">B</span>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-bold text-slate-800">Ferrel Cell (30°–60°)</h4>
+                                <p class="text-slate-500 text-sm">The "gear" in the middle. A thermally indirect cell where surface air flows poleward.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="flex-shrink-0 h-6 w-6 flex items-center justify-center rounded-full bg-blue-100 text-blue-600 font-bold text-sm mt-1">C</span>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-bold text-slate-800">Polar Cell (60°–90°)</h4>
+                                <p class="text-slate-500 text-sm">Driven by extreme cold. Air sinks at the poles and flows equatorward.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Visualization: Latitudinal Extent -->
+                <div class="bg-slate-50 rounded-xl p-4 border border-slate-200">
+                    <h4 class="text-center font-bold text-slate-700 mb-4">Latitudinal Zones of Circulation</h4>
+                    <!-- Chart Container -->
+                    <div class="chart-container">
+                        <canvas id="cellChart"></canvas>
+                    </div>
+                    <p class="text-center text-xs text-slate-400 mt-2">Figure 1: Latitudinal range of the three primary circulation cells.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: Pressure Belts (Line Chart) -->
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="md:col-span-1 bg-gradient-to-br from-slate-800 to-slate-900 text-white rounded-2xl shadow-xl p-8">
+                <h3 class="text-2xl font-bold mb-4">The Pressure Pulse</h3>
+                <p class="text-slate-300 mb-6 text-sm leading-relaxed">
+                    Air pressure isn't static; it oscillates across latitudes. Where air rises, Low Pressure forms (rainy/stormy). Where air sinks, High Pressure forms (clear/dry).
+                </p>
+                <div class="space-y-4">
+                    <div class="p-3 bg-white/10 rounded border-l-4 border-red-500">
+                        <span class="block text-xs uppercase tracking-wider text-slate-400">Low Pressure (Rising Air)</span>
+                        <span class="font-bold">Equator & 60° Latitude</span>
+                    </div>
+                    <div class="p-3 bg-white/10 rounded border-l-4 border-blue-500">
+                        <span class="block text-xs uppercase tracking-wider text-slate-400">High Pressure (Sinking Air)</span>
+                        <span class="font-bold">30° & 90° Latitude</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="md:col-span-2 bg-white rounded-2xl shadow-xl p-6 border border-slate-100">
+                <h4 class="text-center font-bold text-slate-700 mb-2">Global Pressure Belts by Latitude</h4>
+                <!-- Chart Container -->
+                <div class="chart-container" style="height: 350px;">
+                    <canvas id="pressureChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: The Winds -->
+        <section id="winds">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-slate-900">The Primary Winds</h2>
+                <p class="text-slate-600 mt-2">The surface result of the circulation cells.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+                <!-- Trade Winds -->
+                <div class="group relative bg-white rounded-2xl shadow-md hover:shadow-2xl transition-all duration-300 overflow-hidden">
+                    <div class="absolute top-0 left-0 w-full h-2 bg-orange-500"></div>
+                    <div class="p-8">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-2xl font-bold text-slate-800">Trade Winds</h3>
+                            <span class="text-xs font-bold px-2 py-1 bg-orange-100 text-orange-700 rounded">0° – 30°</span>
+                        </div>
+                        <p class="text-sm text-slate-500 italic mb-6">"The sailor's best friend"</p>
+                        
+                        <div class="space-y-3">
+                            <div class="flex justify-between border-b border-slate-100 pb-2">
+                                <span class="text-slate-600 font-medium">Direction (NH)</span>
+                                <span class="text-slate-800 font-bold">North-East</span>
+                            </div>
+                            <div class="flex justify-between border-b border-slate-100 pb-2">
+                                <span class="text-slate-600 font-medium">Direction (SH)</span>
+                                <span class="text-slate-800 font-bold">South-East</span>
+                            </div>
+                        </div>
+                        <p class="mt-6 text-sm text-slate-600 leading-relaxed">
+                            Steady, reliable winds blowing toward the Equator. Historically crucial for trans-oceanic trade routes.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Westerlies -->
+                <div class="group relative bg-white rounded-2xl shadow-md hover:shadow-2xl transition-all duration-300 overflow-hidden">
+                    <div class="absolute top-0 left-0 w-full h-2 bg-cyan-500"></div>
+                    <div class="p-8">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-2xl font-bold text-slate-800">Westerlies</h3>
+                            <span class="text-xs font-bold px-2 py-1 bg-cyan-100 text-cyan-700 rounded">30° – 60°</span>
+                        </div>
+                        <p class="text-sm text-slate-500 italic mb-6">"The storm bringers"</p>
+                        
+                        <div class="space-y-3">
+                            <div class="flex justify-between border-b border-slate-100 pb-2">
+                                <span class="text-slate-600 font-medium">Direction (NH)</span>
+                                <span class="text-slate-800 font-bold">South-West</span>
+                            </div>
+                            <div class="flex justify-between border-b border-slate-100 pb-2">
+                                <span class="text-slate-600 font-medium">Direction (SH)</span>
+                                <span class="text-slate-800 font-bold">North-West</span>
+                            </div>
+                        </div>
+                        <p class="mt-6 text-sm text-slate-600 leading-relaxed">
+                            Blow toward the poles. Extremely vigorous in the Southern Hemisphere due to the lack of landmass friction.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Polar Easterlies -->
+                <div class="group relative bg-white rounded-2xl shadow-md hover:shadow-2xl transition-all duration-300 overflow-hidden">
+                    <div class="absolute top-0 left-0 w-full h-2 bg-blue-600"></div>
+                    <div class="p-8">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-2xl font-bold text-slate-800">Polar Easterlies</h3>
+                            <span class="text-xs font-bold px-2 py-1 bg-blue-100 text-blue-700 rounded">60° – 90°</span>
+                        </div>
+                        <p class="text-sm text-slate-500 italic mb-6">"The frozen breath"</p>
+                        
+                        <div class="space-y-3">
+                            <div class="flex justify-between border-b border-slate-100 pb-2">
+                                <span class="text-slate-600 font-medium">Direction (NH)</span>
+                                <span class="text-slate-800 font-bold">North-East</span>
+                            </div>
+                            <div class="flex justify-between border-b border-slate-100 pb-2">
+                                <span class="text-slate-600 font-medium">Direction (SH)</span>
+                                <span class="text-slate-800 font-bold">South-East</span>
+                            </div>
+                        </div>
+                        <p class="mt-6 text-sm text-slate-600 leading-relaxed">
+                            Cold, dry, stable winds blowing from the high-pressure poles toward the sub-polar lows.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: Glossary -->
+        <section class="bg-cyan-900 rounded-2xl p-8 md:p-12 text-white shadow-2xl">
+            <h2 class="text-3xl font-bold mb-8 text-center border-b border-cyan-700 pb-4">Nautical Terminology</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white/10 p-6 rounded-lg backdrop-blur-sm border border-white/10">
+                    <h4 class="text-orange-400 font-bold mb-2">ITCZ</h4>
+                    <p class="text-sm text-cyan-100">Inter-Tropical Convergence Zone. The calm, low-pressure belt at the Equator where trade winds collide. Often creates heavy thunderstorms.</p>
+                </div>
+                <div class="bg-white/10 p-6 rounded-lg backdrop-blur-sm border border-white/10">
+                    <h4 class="text-orange-400 font-bold mb-2">Horse Latitudes</h4>
+                    <p class="text-sm text-cyan-100">~30° Latitudes. Calm, high-pressure zones where ships would stall. Legend says sailors threw horses overboard to conserve water.</p>
+                </div>
+                <div class="bg-white/10 p-6 rounded-lg backdrop-blur-sm border border-white/10">
+                    <h4 class="text-orange-400 font-bold mb-2">Roaring Forties</h4>
+                    <p class="text-sm text-cyan-100">Strong Westerly winds found at 40°S (and Furious Fifties at 50°S). Dangerous but fast routes for ships.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-slate-900 text-slate-400 py-8 text-center text-sm">
+        <p>&copy; 2024 Educational Infographics Series. Data Source: Class 8-10 Social Science Notes.</p>
+    </footer>
+
+    <!-- JavaScript for Charts -->
+    <script>
+        // --- UTILITY: Label Wrapping (Mandatory) ---
+        function wrapLabel(label) {
+            if (typeof label !== 'string') return label;
+            if (label.length <= 16) return label;
+            
+            const words = label.split(' ');
+            const lines = [];
+            let currentLine = words[0];
+
+            for (let i = 1; i < words.length; i++) {
+                if ((currentLine + " " + words[i]).length <= 16) {
+                    currentLine += " " + words[i];
+                } else {
+                    lines.push(currentLine);
+                    currentLine = words[i];
+                }
+            }
+            lines.push(currentLine);
+            return lines;
+        }
+
+        // --- CHART 1: The Three Cells (Floating Bar Chart) ---
+        const ctxCells = document.getElementById('cellChart').getContext('2d');
+        
+        // Data Structure: [Start Latitude, End Latitude]
+        // y-axis labels: Hadley, Ferrel, Polar
+        const cellLabels = ['Hadley Cell', 'Ferrel Cell', 'Polar Cell'];
+        const processedCellLabels = cellLabels.map(wrapLabel);
+
+        const cellChart = new Chart(ctxCells, {
+            type: 'bar',
+            data: {
+                labels: processedCellLabels,
+                datasets: [{
+                    label: 'Latitudinal Extent (Degrees)',
+                    data: [
+                        [0, 30],   // Hadley
+                        [30, 60],  // Ferrel
+                        [60, 90]   // Polar
+                    ],
+                    backgroundColor: [
+                        'rgba(249, 115, 22, 0.8)', // Orange (Hot)
+                        'rgba(6, 182, 212, 0.8)',  // Cyan (Temperate)
+                        'rgba(59, 130, 246, 0.8)'  // Blue (Cold)
+                    ],
+                    borderColor: [
+                        'rgba(249, 115, 22, 1)',
+                        'rgba(6, 182, 212, 1)',
+                        'rgba(59, 130, 246, 1)'
+                    ],
+                    borderWidth: 1,
+                    barPercentage: 0.6
+                }]
+            },
+            options: {
+                indexAxis: 'y', // Horizontal Bar Chart
+                responsive: true,
+                maintainAspectRatio: false, // Fits container
+                scales: {
+                    x: {
+                        min: 0,
+                        max: 90,
+                        title: {
+                            display: true,
+                            text: 'Degrees Latitude (N/S)',
+                            color: '#64748b'
+                        },
+                        grid: {
+                            color: '#e2e8f0'
+                        }
+                    },
+                    y: {
+                        grid: {
+                            display: false
+                        },
+                        ticks: {
+                            color: '#0f172a',
+                            font: {
+                                weight: 'bold'
+                            }
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: function(tooltipItems) {
+                                const item = tooltipItems[0];
+                                let label = item.chart.data.labels[item.dataIndex];
+                                if (Array.isArray(label)) {
+                                    return label.join(' ');
+                                } else {
+                                    return label;
+                                }
+                            },
+                            label: function(context) {
+                                const raw = context.raw;
+                                return `Range: ${raw[0]}° to ${raw[1]}° Latitude`;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        // --- CHART 2: Pressure Belts (Line Chart) ---
+        const ctxPressure = document.getElementById('pressureChart').getContext('2d');
+        
+        // Data: Latitude 0, 30, 60, 90
+        // Pressure: Low(0), High(1), Low(0), High(1) - Conceptually
+        const pressureLabels = ['Equator (0°)', 'Sub-Tropical (30°)', 'Sub-Polar (60°)', 'Polar (90°)'];
+        const processedPressureLabels = pressureLabels.map(wrapLabel);
+
+        const pressureChart = new Chart(ctxPressure, {
+            type: 'line',
+            data: {
+                labels: processedPressureLabels,
+                datasets: [{
+                    label: 'Pressure Tendency',
+                    data: [0, 1, 0, 1], // 0 = Low, 1 = High
+                    borderColor: '#0c4a6e', // Deep Blue
+                    backgroundColor: 'rgba(6, 182, 212, 0.1)',
+                    borderWidth: 3,
+                    tension: 0.2, // Slight curve, but mostly distinct changes
+                    pointBackgroundColor: [
+                        '#ef4444', // Red for Low (Stormy/Rising)
+                        '#3b82f6', // Blue for High (Clear/Sinking)
+                        '#ef4444', // Red for Low
+                        '#3b82f6'  // Blue for High
+                    ],
+                    pointRadius: 8,
+                    pointHoverRadius: 10,
+                    fill: true
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 1.2,
+                        ticks: {
+                            callback: function(value) {
+                                if(value === 0) return 'LOW (Rising Air)';
+                                if(value === 1) return 'HIGH (Sinking Air)';
+                                return '';
+                            },
+                            font: {
+                                weight: 'bold'
+                            },
+                            color: (ctx) => {
+                                if (ctx.tick.label === 'LOW (Rising Air)') return '#ef4444';
+                                if (ctx.tick.label === 'HIGH (Sinking Air)') return '#3b82f6';
+                                return '#64748b';
+                            }
+                        },
+                        grid: {
+                            color: '#e2e8f0',
+                            borderDash: [5, 5]
+                        }
+                    },
+                    x: {
+                        grid: {
+                            display: false
+                        },
+                        ticks: {
+                            color: '#334155'
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: function(tooltipItems) {
+                                const item = tooltipItems[0];
+                                let label = item.chart.data.labels[item.dataIndex];
+                                if (Array.isArray(label)) {
+                                    return label.join(' ');
+                                } else {
+                                    return label;
+                                }
+                            },
+                            label: function(context) {
+                                const val = context.raw;
+                                return val === 1 ? 'High Pressure Zone: Air Sinks, Clear Skies' : 'Low Pressure Zone: Air Rises, Clouds Form';
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secondary Wind Systems: Periodic & Regional Flows</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+    <!-- 
+        Palette Name: Terra & Tide
+        Hex Codes:
+        - Primary: #0f766e (Teal 700)
+        - Secondary: #f59e0b (Amber 500)
+        - Neutral: #f8fafc (Slate 50)
+        - Accent: #dc2626 (Red 600)
+    -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+        }
+        
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 400px;
+        }
+
+        @media (max-width: 768px) {
+            .chart-container {
+                height: 300px;
+            }
+        }
+
+        .wind-arrow {
+            transition: transform 0.3s ease;
+        }
+        .wind-arrow:hover {
+            transform: scale(1.1);
+        }
+    </style>
+    <!-- Narrative Plan:
+         1. Introduction: Distinguish Secondary Winds from Primary Winds (Periodic nature).
+         2. Monsoon Analysis: Visualizing the seasonal reversal of winds using a Grouped Bar Chart.
+         3. Diurnal Systems: Comparing Land/Sea Breezes through a structured UI diagram.
+         4. Topographic Winds: Mountain and Valley breezes.
+         5. Data Comparison: A statistical look at temperature vs. wind direction.
+    -->
+    <!-- NO SVG CONFIRMATION: All icons/diagrams are CSS-based or Unicode. -->
+    <!-- NO MERMAID JS CONFIRMATION: Manual HTML/CSS layout used for flowcharts. -->
+</head>
+<body class="selection:bg-teal-100">
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-lg border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 bg-teal-600 rounded-lg flex items-center justify-center text-white font-bold italic">S</div>
+                <span class="font-extrabold text-xl text-slate-800 tracking-tight">Secondary<span class="text-teal-600">Winds</span></span>
+            </div>
+            <div class="hidden md:flex gap-6 text-sm font-semibold text-slate-500">
+                <a href="#monsoons" class="hover:text-teal-600">Monsoons</a>
+                <a href="#diurnal" class="hover:text-teal-600">Land & Sea</a>
+                <a href="#mountain" class="hover:text-teal-600">Mountain/Valley</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="py-16 px-6 bg-teal-900 text-white overflow-hidden relative">
+        <div class="max-w-5xl mx-auto relative z-10 text-center">
+            <span class="inline-block px-4 py-1 rounded-full bg-teal-500/20 border border-teal-400/30 text-teal-300 text-xs font-bold uppercase tracking-widest mb-4">Regional Climate Analysis</span>
+            <h1 class="text-4xl md:text-6xl font-black mb-6">Secondary Wind Circulation</h1>
+            <p class="text-xl text-teal-100 max-w-3xl mx-auto font-light leading-relaxed">
+                Unlike planetary winds, secondary winds are <strong>periodic</strong>. They change direction at specific intervals—be it seasonally or daily—driven by regional differences in temperature and pressure.
+            </p>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-6 py-12 space-y-24">
+
+        <!-- SECTION 1: Monsoons -->
+        <section id="monsoons">
+            <div class="flex flex-col md:flex-row gap-12 items-center">
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl font-bold text-slate-900 mb-6">The Monsoon System</h2>
+                    <p class="text-slate-600 mb-4 leading-relaxed">
+                        The word "Monsoon" comes from the Arabic word <em>Mausim</em>, meaning season. This is a large-scale seasonal reversal of wind caused by the differential heating of land (Asian continent) and the surrounding oceans (Indian Ocean).
+                    </p>
+                    <div class="space-y-4">
+                        <div class="bg-amber-50 p-4 rounded-xl border-l-4 border-amber-500">
+                            <h4 class="font-bold text-amber-900">Summer Monsoon (SW)</h4>
+                            <p class="text-sm text-amber-800">Land becomes extremely hot (LP), pulling moist air from the cool ocean (HP). Results in heavy rainfall.</p>
+                        </div>
+                        <div class="bg-slate-100 p-4 rounded-xl border-l-4 border-slate-500">
+                            <h4 class="font-bold text-slate-900">Winter Monsoon (NE)</h4>
+                            <p class="text-sm text-slate-800">Land cools rapidly (HP), and winds blow back toward the warmer ocean (LP). Generally dry.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2 bg-white p-6 rounded-3xl shadow-xl border border-slate-100">
+                    <h4 class="text-center font-bold text-slate-700 mb-6">Seasonal Wind Speed & Direction</h4>
+                    <div class="chart-container">
+                        <canvas id="monsoonChart"></canvas>
+                    </div>
+                    <p class="text-[10px] text-slate-400 mt-4 text-center">Data synthesis of typical South Asian wind velocity variations.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: Diurnal Breezes (Land/Sea) -->
+        <section id="diurnal" class="bg-white rounded-3xl shadow-xl p-8 md:p-12">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-slate-900">Diurnal Cycle: Land & Sea Breezes</h2>
+                <p class="text-slate-500 mt-2">Local coastal circulations that occur every 24 hours.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- Sea Breeze -->
+                <div class="relative p-6 border border-slate-100 rounded-2xl bg-gradient-to-b from-blue-50 to-white">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-3xl">&#9708;</span> <!-- Day Symbol -->
+                        <h3 class="text-xl font-bold text-blue-900">Sea Breeze (Daytime)</h3>
+                    </div>
+                    <div class="space-y-4 text-sm text-slate-600">
+                        <p>1. Land heats up faster than water during the day.</p>
+                        <p>2. Warm air over land rises, creating <strong>Low Pressure</strong>.</p>
+                        <p>3. Cool, heavy air from the sea rushes in to fill the gap.</p>
+                    </div>
+                    <!-- CSS Diagram -->
+                    <div class="mt-8 h-32 flex items-end justify-between relative px-4">
+                        <div class="w-1/2 h-4 bg-orange-300 rounded-t-lg relative text-center text-[10px] font-bold">LAND (LP)</div>
+                        <div class="w-1/2 h-8 bg-blue-400 rounded-t-lg relative text-center text-[10px] font-bold text-white">SEA (HP)</div>
+                        <!-- Arrow -->
+                        <div class="absolute bottom-6 left-1/2 -translate-x-1/2 text-2xl animate-pulse text-blue-600">&#129044;</div>
+                    </div>
+                </div>
+
+                <!-- Land Breeze -->
+                <div class="relative p-6 border border-slate-100 rounded-2xl bg-gradient-to-b from-slate-800 to-slate-900 text-white">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-3xl">&#9790;</span> <!-- Night Symbol -->
+                        <h3 class="text-xl font-bold text-slate-100">Land Breeze (Nighttime)</h3>
+                    </div>
+                    <div class="space-y-4 text-sm text-slate-300">
+                        <p>1. Land loses heat faster than water at night.</p>
+                        <p>2. Land becomes <strong>High Pressure</strong> (Cooler).</p>
+                        <p>3. Sea remains warmer (Low Pressure), pulling air from the land.</p>
+                    </div>
+                    <!-- CSS Diagram -->
+                    <div class="mt-8 h-32 flex items-end justify-between relative px-4">
+                        <div class="w-1/2 h-8 bg-slate-700 rounded-t-lg relative text-center text-[10px] font-bold">LAND (HP)</div>
+                        <div class="w-1/2 h-4 bg-blue-900 rounded-t-lg relative text-center text-[10px] font-bold">SEA (LP)</div>
+                        <!-- Arrow -->
+                        <div class="absolute bottom-6 left-1/2 -translate-x-1/2 text-2xl animate-pulse text-teal-400">&#129046;</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: Mountain & Valley Breezes -->
+        <section id="mountain" class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div class="order-2 md:order-1 bg-white p-6 rounded-3xl shadow-xl">
+                <h4 class="text-center font-bold text-slate-700 mb-6">Topographic Pressure Inversions</h4>
+                <div class="chart-container">
+                    <canvas id="mountainChart"></canvas>
+                </div>
+            </div>
+            <div class="order-1 md:order-2">
+                <h2 class="text-3xl font-bold text-slate-900 mb-6">Mountain & Valley Breezes</h2>
+                <p class="text-slate-600 mb-6">
+                    Topography plays a major role in regional winds. The slopes of a mountain receive more direct solar heat than the valley floor during the day, creating a cycle of upslope and downslope winds.
+                </p>
+                <div class="grid grid-cols-1 gap-4 text-sm">
+                    <div class="flex items-center gap-4 p-4 bg-white rounded-xl shadow-sm border border-slate-100">
+                        <div class="w-12 h-12 rounded-full bg-teal-100 flex items-center justify-center text-teal-700 font-bold">UP</div>
+                        <div>
+                            <h5 class="font-bold">Anabatic Wind (Valley Breeze)</h5>
+                            <p class="text-slate-500">Daytime: Warm air travels UP the mountain slopes.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4 p-4 bg-white rounded-xl shadow-sm border border-slate-100">
+                        <div class="w-12 h-12 rounded-full bg-red-100 flex items-center justify-center text-red-700 font-bold">DN</div>
+                        <div>
+                            <h5 class="font-bold">Katabatic Wind (Mountain Breeze)</h5>
+                            <p class="text-slate-500">Nighttime: Cold, heavy air sinks DOWN into the valley.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Comparison Section -->
+        <section class="bg-slate-900 rounded-3xl p-8 md:p-12 text-white">
+            <h2 class="text-2xl font-bold mb-8 text-center">Summary: Primary vs. Secondary Winds</h2>
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="border-b border-slate-700 text-teal-400 text-sm">
+                            <th class="py-4 px-4">Feature</th>
+                            <th class="py-4 px-4">Primary Winds</th>
+                            <th class="py-4 px-4">Secondary Winds</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-slate-300 text-sm">
+                        <tr class="border-b border-slate-800">
+                            <td class="py-4 px-4 font-bold">Nature</td>
+                            <td class="py-4 px-4">Permanent (constant)</td>
+                            <td class="py-4 px-4">Periodic (changes with time)</td>
+                        </tr>
+                        <tr class="border-b border-slate-800">
+                            <td class="py-4 px-4 font-bold">Extent</td>
+                            <td class="py-4 px-4">Global (Planetary)</td>
+                            <td class="py-4 px-4">Regional / Local</td>
+                        </tr>
+                        <tr class="border-b border-slate-800">
+                            <td class="py-4 px-4 font-bold">Examples</td>
+                            <td class="py-4 px-4">Trade Winds, Westerlies</td>
+                            <td class="py-4 px-4">Monsoons, Land/Sea Breezes</td>
+                        </tr>
+                        <tr>
+                            <td class="py-4 px-4 font-bold">Main Cause</td>
+                            <td class="py-4 px-4">Global Pressure Belts</td>
+                            <td class="py-4 px-4">Regional Temp. Differences</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-slate-950 text-slate-500 py-12 text-center text-xs">
+        <p>Curated for Grade 8-10 Geography Curriculum. Designed by Gemini Visualization Tool.</p>
+    </footer>
+
+    <script>
+        // --- UTILITY: Label Wrapping ---
+        function wrapLabel(label) {
+            if (typeof label !== 'string') return label;
+            if (label.length <= 16) return label;
+            const words = label.split(' ');
+            const lines = [];
+            let currentLine = words[0];
+            for (let i = 1; i < words.length; i++) {
+                if ((currentLine + " " + words[i]).length <= 16) {
+                    currentLine += " " + words[i];
+                } else {
+                    lines.push(currentLine);
+                    currentLine = words[i];
+                }
+            }
+            lines.push(currentLine);
+            return lines;
+        }
+
+        // Tooltip Shared Logic
+        const tooltipConfig = {
+            callbacks: {
+                title: function(tooltipItems) {
+                    const item = tooltipItems[0];
+                    let label = item.chart.data.labels[item.dataIndex];
+                    return Array.isArray(label) ? label.join(' ') : label;
+                }
+            }
+        };
+
+        // --- CHART 1: Monsoon Seasonal Comparison ---
+        const ctxMonsoon = document.getElementById('monsoonChart').getContext('2d');
+        const monsoonLabels = ['June-Sept (Summer Monsoon)', 'Oct-Feb (Winter Monsoon)'];
+        
+        new Chart(ctxMonsoon, {
+            type: 'bar',
+            data: {
+                labels: monsoonLabels.map(wrapLabel),
+                datasets: [
+                    {
+                        label: 'Inbound Moisture (%)',
+                        data: [95, 10],
+                        backgroundColor: '#0f766e',
+                        borderRadius: 8
+                    },
+                    {
+                        label: 'Relative Wind Speed',
+                        data: [80, 45],
+                        backgroundColor: '#f59e0b',
+                        borderRadius: 8
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    tooltip: tooltipConfig,
+                    legend: { position: 'bottom' }
+                },
+                scales: {
+                    y: { beginAtZero: true, max: 100 }
+                }
+            }
+        });
+
+        // --- CHART 2: Mountain Breeze Simulation (Radar) ---
+        const ctxMountain = document.getElementById('mountainChart').getContext('2d');
+        const mountainLabels = ['Valley Floor', 'Lower Slope', 'Mid Slope', 'Summit', 'Atmosphere'];
+        
+        new Chart(ctxMountain, {
+            type: 'radar',
+            data: {
+                labels: mountainLabels.map(wrapLabel),
+                datasets: [
+                    {
+                        label: 'Day (Anabatic Flow)',
+                        data: [20, 50, 80, 90, 40],
+                        borderColor: '#f59e0b',
+                        backgroundColor: 'rgba(245, 158, 11, 0.2)',
+                        fill: true
+                    },
+                    {
+                        label: 'Night (Katabatic Flow)',
+                        data: [90, 70, 40, 20, 60],
+                        borderColor: '#0f766e',
+                        backgroundColor: 'rgba(15, 118, 110, 0.2)',
+                        fill: true
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    tooltip: tooltipConfig,
+                    legend: { position: 'bottom' }
+                },
+                scales: {
+                    r: {
+                        angleLines: { display: false },
+                        suggestedMin: 0,
+                        suggestedMax: 100,
+                        ticks: { display: false }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Winds: Tertiary Atmospheric Systems</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+
+    <!-- 
+        Palette Name: Stormy & Warm
+        - Background: #f8fafc (Slate 50)
+        - Primary: #3730a3 (Indigo 800)
+        - Hot Accent: #d97706 (Amber 600)
+        - Cold Accent: #0369a1 (Sky 700)
+        - Text: #1e293b (Slate 800)
+    -->
+    <style>
+        :root {
+            --primary: #3730a3;
+            --hot: #d97706;
+            --cold: #0369a1;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+        }
+
+        h1, h2, .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Chart Container Rules */
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 400px;
+        }
+
+        @media (max-width: 768px) {
+            .chart-container {
+                height: 280px;
+            }
+        }
+
+        .local-wind-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .local-wind-card:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+
+    <!-- 
+        Narrative Plan:
+        1. Contextual Introduction: Defining local winds as Tertiary Circulation.
+        2. The Hot Winds (Loo, Chinook, Foehn): Comparing temperature impacts via Bar Chart.
+        3. The Cold Winds (Mistral, Bora): Visualizing wind speeds via Polar Area Chart.
+        4. Focus Study: The 'Loo' (Highly relevant for Indian context).
+        5. Detailed Comparison Table for Exam Prep.
+    -->
+    <!-- NO SVG CONFIRMATION: No SVG elements or paths are used. Visuals are CSS/Canvas. -->
+    <!-- NO MERMAID JS CONFIRMATION: Diagrams are built with Tailwind Grid/Flex. -->
+</head>
+<body class="antialiased">
+
+    <!-- Header Section -->
+    <header class="bg-indigo-900 text-white py-16 px-6 relative overflow-hidden">
+        <div class="max-w-6xl mx-auto text-center relative z-10">
+            <span class="inline-block px-3 py-1 bg-amber-500 text-amber-950 font-bold text-xs rounded-full mb-4">TERTIARY CIRCULATION</span>
+            <h1 class="text-4xl md:text-6xl font-black mb-6">Local Wind Systems</h1>
+            <p class="text-xl text-indigo-100 max-w-2xl mx-auto leading-relaxed font-light">
+                Small-scale winds that occur in the lowest levels of the troposphere, driven by local topography and temperature differences.
+            </p>
+        </div>
+        <!-- Decorative Background Pattern (CSS Only) -->
+        <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(#fff 1px, transparent 1px); background-size: 30px 30px;"></div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-6 py-12 space-y-24">
+
+        <!-- SECTION 1: The Definition -->
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div>
+                <h2 class="text-3xl font-bold text-slate-900 mb-6">What defines a "Local Wind"?</h2>
+                <p class="text-slate-600 mb-6 leading-relaxed">
+                    Unlike Planetary winds (Trade winds) or Periodic winds (Monsoons), local winds are limited to small areas. They typically last for a few hours to a couple of days and are heavily influenced by local features like mountains, valleys, and nearby water bodies.
+                </p>
+                <div class="space-y-4">
+                    <div class="flex items-center gap-4 bg-white p-4 rounded-xl shadow-sm border-l-4 border-indigo-600">
+                        <span class="text-2xl">&#128506;</span> <!-- Unicode Map -->
+                        <span class="text-sm font-semibold">Limited Geographical Extent</span>
+                    </div>
+                    <div class="flex items-center gap-4 bg-white p-4 rounded-xl shadow-sm border-l-4 border-amber-600">
+                        <span class="text-2xl">&#128338;</span> <!-- Unicode Clock -->
+                        <span class="text-sm font-semibold">Short Temporal Duration</span>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-indigo-50 p-8 rounded-3xl border border-indigo-100">
+                <h3 class="text-xl font-bold text-indigo-900 mb-4">Common Triggers</h3>
+                <ul class="space-y-4 text-slate-700">
+                    <li class="flex gap-2">
+                        <span class="text-indigo-600 font-bold">•</span>
+                        <span>Rapid heating of desert sands.</span>
+                    </li>
+                    <li class="flex gap-2">
+                        <span class="text-indigo-600 font-bold">•</span>
+                        <span>Compression of air sliding down mountain slopes.</span>
+                    </li>
+                    <li class="flex gap-2">
+                        <span class="text-indigo-600 font-bold">•</span>
+                        <span>Seasonal pressure local variations over valleys.</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- SECTION 2: Hot Local Winds (Visualization) -->
+        <section class="bg-white rounded-3xl shadow-xl overflow-hidden border border-slate-100">
+            <div class="p-8 md:p-12">
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <h2 class="text-3xl font-bold text-slate-900">Hot Local Winds</h2>
+                    <p class="text-slate-500 mt-2">Winds that drastically increase the ambient temperature of a region, often bringing dry, dusty conditions.</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                    <div class="lg:col-span-2">
+                        <h4 class="text-center font-bold text-slate-700 mb-4 uppercase text-xs tracking-widest">Temperature Comparison (°C)</h4>
+                        <div class="chart-container">
+                            <canvas id="hotWindChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="space-y-6">
+                        <div class="p-4 rounded-xl bg-orange-50 border border-orange-100">
+                            <h5 class="font-bold text-orange-900">Chinook (Rockies, USA)</h5>
+                            <p class="text-xs text-orange-800">Known as the "Snow Eater." It can raise temperatures by 20°C in minutes, melting winter snow.</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-amber-50 border border-amber-100">
+                            <h5 class="font-bold text-amber-900">Foehn (Alps, Europe)</h5>
+                            <p class="text-xs text-amber-800">A dry wind that blows down the northern slopes of the Alps, aiding grape ripening.</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-red-50 border border-red-100">
+                            <h5 class="font-bold text-red-900">Harmattan (West Africa)</h5>
+                            <p class="text-xs text-red-800">Known as the "Doctor" wind because its dryness provides relief from tropical humidity.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: Cold Local Winds -->
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div class="order-2 md:order-1">
+                <h4 class="text-center font-bold text-slate-700 mb-6 uppercase text-xs tracking-widest">Wind Velocity Intensity</h4>
+                <div class="chart-container">
+                    <canvas id="coldWindChart"></canvas>
+                </div>
+            </div>
+            <div class="order-1 md:order-2">
+                <h2 class="text-3xl font-bold text-slate-900 mb-6">Cold Local Winds</h2>
+                <p class="text-slate-600 mb-8 leading-relaxed">
+                    These winds originate from high-altitude snow-covered plateaus or poles and rush down into warmer valleys due to gravity.
+                </p>
+                <div class="grid grid-cols-1 gap-4">
+                    <div class="p-6 bg-sky-900 text-white rounded-2xl shadow-lg">
+                        <h5 class="text-xl font-bold mb-2">Mistral</h5>
+                        <p class="text-sm text-sky-200">A violent, cold wind that blows from the Alps toward the Mediterranean via the Rhone valley. It is so strong it can damage crops and overturn vehicles.</p>
+                    </div>
+                    <div class="p-6 bg-slate-800 text-white rounded-2xl shadow-lg">
+                        <h5 class="text-xl font-bold mb-2">Bora</h5>
+                        <p class="text-sm text-slate-300">A cold, dry, gusty wind that blows from the Hungarian plateaus toward the Adriatic Sea.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: Spotlight - The Loo (India) -->
+        <section class="bg-gradient-to-br from-amber-600 to-orange-700 rounded-3xl p-8 md:p-16 text-white shadow-2xl relative overflow-hidden">
+            <div class="relative z-10 max-w-4xl mx-auto">
+                <h2 class="text-4xl font-black mb-6 text-center">Case Study: The 'Loo'</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+                    <div class="md:col-span-2">
+                        <p class="text-xl font-serif italic mb-6">"A seasonal curse of the Indo-Gangetic Plains."</p>
+                        <p class="leading-relaxed text-amber-50">
+                            The <strong>Loo</strong> is a strong, dusty, gusty, hot and dry summer wind from the west which blows over the western Indo-Gangetic Plain region of North India and Pakistan. It is especially strong in the months of May and June.
+                        </p>
+                        <div class="mt-8 flex flex-wrap gap-4">
+                            <span class="px-4 py-2 bg-white/20 rounded-lg text-sm font-bold">Temp: 45°C - 50°C</span>
+                            <span class="px-4 py-2 bg-white/20 rounded-lg text-sm font-bold">Effect: Heatstroke</span>
+                            <span class="px-4 py-2 bg-white/20 rounded-lg text-sm font-bold">Region: North India</span>
+                        </div>
+                    </div>
+                    <div class="bg-white/10 p-6 rounded-2xl backdrop-blur-md border border-white/20 text-center">
+                        <span class="text-5xl block mb-2">&#9728;</span> <!-- Unicode Sun -->
+                        <h4 class="text-2xl font-bold">Impact</h4>
+                        <p class="text-sm text-amber-200 mt-2 italic">Causes extreme dehydration and can be fatal to crops and humans.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: Global Comparison Table -->
+        <section class="bg-white rounded-3xl shadow-xl p-8 md:p-12 border border-slate-100">
+            <h2 class="text-2xl font-bold text-slate-900 mb-8 text-center">Local Winds Reference Sheet</h2>
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="border-b-2 border-slate-200 text-indigo-700 uppercase text-xs font-bold tracking-widest">
+                            <th class="py-4 px-4">Name</th>
+                            <th class="py-4 px-4">Type</th>
+                            <th class="py-4 px-4">Region</th>
+                            <th class="py-4 px-4">Special Character</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-slate-600 text-sm">
+                        <tr class="border-b border-slate-50 hover:bg-slate-50 transition">
+                            <td class="py-4 px-4 font-bold text-slate-800">Chinook</td>
+                            <td class="py-4 px-4">Hot/Dry</td>
+                            <td class="py-4 px-4">USA/Canada Rockies</td>
+                            <td class="py-4 px-4">"Snow-Eater"</td>
+                        </tr>
+                        <tr class="border-b border-slate-50 hover:bg-slate-50 transition">
+                            <td class="py-4 px-4 font-bold text-slate-800">Loo</td>
+                            <td class="py-4 px-4">Hot/Dry</td>
+                            <td class="py-4 px-4">North India</td>
+                            <td class="py-4 px-4">Extreme Dust/Heat</td>
+                        </tr>
+                        <tr class="border-b border-slate-50 hover:bg-slate-50 transition">
+                            <td class="py-4 px-4 font-bold text-slate-800">Mistral</td>
+                            <td class="py-4 px-4">Cold/Dry</td>
+                            <td class="py-4 px-4">France (Alps)</td>
+                            <td class="py-4 px-4">Violently fast</td>
+                        </tr>
+                        <tr class="border-b border-slate-50 hover:bg-slate-50 transition">
+                            <td class="py-4 px-4 font-bold text-slate-800">Sirocco</td>
+                            <td class="py-4 px-4">Hot/Moist</td>
+                            <td class="py-4 px-4">Sahara to Italy</td>
+                            <td class="py-4 px-4">"Blood Rain" (Dust)</td>
+                        </tr>
+                        <tr class="border-b border-slate-50 hover:bg-slate-50 transition">
+                            <td class="py-4 px-4 font-bold text-slate-800">Bora</td>
+                            <td class="py-4 px-4">Cold/Dry</td>
+                            <td class="py-4 px-4">Italy/Adriatic Coast</td>
+                            <td class="py-4 px-4">Gravity-driven</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-indigo-950 text-indigo-300 py-12 px-6 text-center text-sm">
+        <div class="max-w-2xl mx-auto">
+            <p class="mb-4">Designed for the Class 8-10 Social Science Syllabus (Atmospheric Geography).</p>
+            <div class="flex justify-center gap-8 opacity-50">
+                <span>&bull; Primary Circulation</span>
+                <span>&bull; Secondary Circulation</span>
+                <span>&bull; Local Winds</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // --- UTILITY: Label Wrapping (Mandatory) ---
+        function wrapLabel(label) {
+            if (typeof label !== 'string') return label;
+            if (label.length <= 16) return label;
+            const words = label.split(' ');
+            const lines = [];
+            let currentLine = words[0];
+            for (let i = 1; i < words.length; i++) {
+                if ((currentLine + " " + words[i]).length <= 16) {
+                    currentLine += " " + words[i];
+                } else {
+                    lines.push(currentLine);
+                    currentLine = words[i];
+                }
+            }
+            lines.push(currentLine);
+            return lines;
+        }
+
+        // --- GLOBAL CHART CONFIG ---
+        const tooltipPlugin = {
+            callbacks: {
+                title: function(tooltipItems) {
+                    const item = tooltipItems[0];
+                    let label = item.chart.data.labels[item.dataIndex];
+                    return Array.isArray(label) ? label.join(' ') : label;
+                }
+            }
+        };
+
+        // --- CHART 1: Hot Winds Temperature Impact ---
+        const ctxHot = document.getElementById('hotWindChart').getContext('2d');
+        const hotLabels = ['Chinook (Snow Eater)', 'Foehn (Alps)', 'Loo (India)', 'Harmattan (Africa)', 'Sirocco (Italy)'];
+        
+        new Chart(ctxHot, {
+            type: 'bar',
+            data: {
+                labels: hotLabels.map(wrapLabel),
+                datasets: [{
+                    label: 'Typical Peak Temperature (°C)',
+                    data: [25, 30, 48, 35, 40],
+                    backgroundColor: [
+                        '#fbbf24', '#f59e0b', '#dc2626', '#d97706', '#ea580c'
+                    ],
+                    borderRadius: 10,
+                    borderSkipped: false
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: tooltipPlugin
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: { display: true, text: 'Temperature Celsius' }
+                    }
+                }
+            }
+        });
+
+        // --- CHART 2: Cold Winds Velocity (Polar Area) ---
+        const ctxCold = document.getElementById('coldWindChart').getContext('2d');
+        const coldLabels = ['Mistral (Rhone Valley)', 'Bora (Adriatic)', 'Pampero (Argentina)', 'Buran (Siberia)'];
+        
+        new Chart(ctxCold, {
+            type: 'polarArea',
+            data: {
+                labels: coldLabels.map(wrapLabel),
+                datasets: [{
+                    label: 'Avg Velocity (km/h)',
+                    data: [130, 100, 80, 110],
+                    backgroundColor: [
+                        'rgba(3, 105, 161, 0.7)',
+                        'rgba(55, 48, 163, 0.7)',
+                        'rgba(71, 85, 105, 0.7)',
+                        'rgba(15, 23, 42, 0.7)'
+                    ]
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    r: {
+                        ticks: { display: false }
+                    }
+                },
+                plugins: {
+                    tooltip: tooltipPlugin,
+                    legend: { position: 'bottom' }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ocean Currents: The Global Conveyor Belt</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <!-- 
+        Palette Name: Deep Sea & Coral
+        - Midnight Blue: #0f172a
+        - Tropical Teal: #0d9488
+        - Vivid Coral: #fb7185
+        - Deep Azure: #1e40af
+        - Surface: #ffffff
+        - Background: #f8fafc
+    -->
+    <style>
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+        }
+
+        .serif {
+            font-family: 'Libre+Baskerville', serif;
+        }
+
+        /* Chart Container Rules - MANDATORY */
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 400px;
+        }
+
+        @media (max-width: 768px) {
+            .chart-container {
+                height: 300px;
+            }
+        }
+
+        .current-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .current-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+        }
+    </style>
+
+    <!-- 
+        Narrative Plan:
+        1. Hook: Ocean currents as the "Rivers of the Sea."
+        2. The Drivers: Explaining the Thermohaline and Wind-driven systems.
+        3. Classification: Warm vs. Cold currents (Visualized via Bar Chart).
+        4. Global Gyres: The 5 major circular motions (Visualized via Radar Chart).
+        5. Impact Analysis: Climate, Fishing, and Navigation.
+        6. Summary Table: Major currents list for exam reference.
+    -->
+    <!-- NO SVG CONFIRMATION: Graphics are Canvas-based or CSS-built. -->
+    <!-- NO MERMAID JS CONFIRMATION: Layouts are structured HTML/Tailwind. -->
+</head>
+<body class="antialiased">
+
+    <!-- Hero Section -->
+    <header class="bg-slate-950 text-white pt-24 pb-32 px-6 relative overflow-hidden">
+        <div class="max-w-6xl mx-auto text-center relative z-10">
+            <span class="inline-block px-4 py-1 bg-teal-500/20 border border-teal-500/50 text-teal-400 text-xs font-bold uppercase tracking-widest rounded-full mb-6">Marine Geography Series</span>
+            <h1 class="text-4xl md:text-7xl font-black mb-6 tracking-tight">Ocean Currents</h1>
+            <p class="text-xl md:text-2xl text-slate-400 max-w-3xl mx-auto font-light leading-relaxed">
+                The massive, continuous movement of seawater driven by gravity, wind, and water density.
+            </p>
+        </div>
+        <!-- Wave Pattern (CSS) -->
+        <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none line-height-0">
+            <div class="h-12 w-full bg-slate-900" style="clip-path: ellipse(60% 100% at 50% 100%);"></div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-6 -mt-16 relative z-20 pb-20 space-y-24">
+
+        <!-- SECTION 1: Key Performance Indicators -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-white p-8 rounded-2xl shadow-xl border-b-4 border-blue-600">
+                <h3 class="text-sm font-bold text-slate-400 uppercase mb-2">Primary Driver</h3>
+                <p class="text-2xl font-extrabold text-slate-800 italic">Prevailing Winds</p>
+                <p class="text-xs text-slate-500 mt-2">Planetary winds like Trades and Westerlies push surface waters.</p>
+            </div>
+            <div class="bg-white p-8 rounded-2xl shadow-xl border-b-4 border-teal-600">
+                <h3 class="text-sm font-bold text-slate-400 uppercase mb-2">Density Driver</h3>
+                <p class="text-2xl font-extrabold text-slate-800 italic">Thermohaline</p>
+                <p class="text-xs text-slate-500 mt-2">Differences in temperature and salinity cause deep-water flow.</p>
+            </div>
+            <div class="bg-white p-8 rounded-2xl shadow-xl border-b-4 border-rose-600">
+                <h3 class="text-sm font-bold text-slate-400 uppercase mb-2">Deflection Force</h3>
+                <p class="text-2xl font-extrabold text-slate-800 italic">Coriolis Effect</p>
+                <p class="text-xs text-slate-500 mt-2">The Earth's rotation bends currents Right (NH) and Left (SH).</p>
+            </div>
+        </div>
+
+        <!-- SECTION 2: Classification Analysis -->
+        <section class="space-y-12">
+            <div class="max-w-3xl">
+                <h2 class="text-3xl font-bold text-slate-900 mb-4 serif">The Thermal Dichotomy</h2>
+                <p class="text-slate-600 leading-relaxed">
+                    Ocean currents are primarily classified based on their temperature relative to the surrounding water. This temperature difference dictates their influence on the local climate of the coastal regions they pass.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center bg-white p-8 md:p-12 rounded-3xl shadow-sm border border-slate-100">
+                <div>
+                    <h4 class="text-center font-bold text-slate-700 mb-8 uppercase text-xs tracking-widest">Temperature Comparison of Major Currents</h4>
+                    <div class="chart-container">
+                        <canvas id="tempChart"></canvas>
+                    </div>
+                </div>
+                <div class="space-y-8">
+                    <div class="flex gap-6">
+                        <div class="w-12 h-12 shrink-0 bg-rose-100 rounded-xl flex items-center justify-center text-rose-600 text-2xl font-bold">W</div>
+                        <div>
+                            <h5 class="text-lg font-bold text-slate-800">Warm Currents</h5>
+                            <p class="text-sm text-slate-500">Flow from the Equator toward the Poles. They bring warm, humid air, increasing the temperature and rainfall of coastal areas (e.g., Gulf Stream, Kuroshio).</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-6">
+                        <div class="w-12 h-12 shrink-0 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 text-2xl font-bold">C</div>
+                        <div>
+                            <h5 class="text-lg font-bold text-slate-800">Cold Currents</h5>
+                            <p class="text-sm text-slate-500">Flow from the Poles toward the Equator. They bring cool, dry air, often creating desert conditions along coasts (e.g., Canary Current, Peru Current).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: Global Gyres Visualization -->
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div class="order-2 md:order-1">
+                <div class="chart-container" style="height: 400px;">
+                    <canvas id="gyreChart"></canvas>
+                </div>
+            </div>
+            <div class="order-1 md:order-2">
+                <h2 class="text-3xl font-bold text-slate-900 mb-6 serif">The Five Great Gyres</h2>
+                <p class="text-slate-600 mb-6 leading-relaxed">
+                    A gyre is a large system of circulating ocean currents. They are essentially circular 'loops' formed by the combination of wind patterns and the Coriolis effect.
+                </p>
+                <div class="grid grid-cols-2 gap-4 text-xs font-bold uppercase tracking-tight">
+                    <div class="p-4 bg-slate-100 rounded-lg text-slate-700 border-l-4 border-teal-500">North Atlantic Gyre</div>
+                    <div class="p-4 bg-slate-100 rounded-lg text-slate-700 border-l-4 border-teal-500">South Atlantic Gyre</div>
+                    <div class="p-4 bg-slate-100 rounded-lg text-slate-700 border-l-4 border-teal-500">North Pacific Gyre</div>
+                    <div class="p-4 bg-slate-100 rounded-lg text-slate-700 border-l-4 border-teal-500">South Pacific Gyre</div>
+                    <div class="p-4 bg-slate-100 rounded-lg text-slate-700 border-l-4 border-teal-500 col-span-2 text-center">Indian Ocean Gyre</div>
+                </div>
+                <p class="text-slate-500 text-sm mt-6 italic">Note: Gyres in the Northern Hemisphere rotate clockwise, while those in the Southern Hemisphere rotate counter-clockwise.</p>
+            </div>
+        </section>
+
+        <!-- SECTION 4: Impact Analysis (Visual Cards) -->
+        <section class="space-y-12">
+            <div class="text-center">
+                <h2 class="text-3xl font-bold text-slate-900 serif">Impact on Man and Environment</h2>
+                <p class="text-slate-500 mt-2">Why do ocean currents matter to us?</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Climate Impact -->
+                <div class="current-card bg-white p-8 rounded-3xl shadow-sm border border-slate-100">
+                    <div class="text-4xl mb-4 text-rose-500">&#127777;</div> <!-- Thermometer -->
+                    <h4 class="text-xl font-bold text-slate-800 mb-3">Climate Modification</h4>
+                    <p class="text-sm text-slate-500 leading-relaxed">
+                        Warm currents keep ports in high latitudes ice-free (e.g., Norway), while cold currents contribute to the formation of coastal deserts like the Atacama and Namib.
+                    </p>
+                </div>
+
+                <!-- Fishing Impact -->
+                <div class="current-card bg-white p-8 rounded-3xl shadow-sm border border-slate-100">
+                    <div class="text-4xl mb-4 text-teal-600">&#128031;</div> <!-- Fish -->
+                    <h4 class="text-xl font-bold text-slate-800 mb-3">Rich Fishing Grounds</h4>
+                    <p class="text-sm text-slate-500 leading-relaxed">
+                        The meeting of warm and cold currents (e.g., Gulf Stream and Labrador) promotes the growth of plankton, creating the world's richest fishing zones like the Grand Banks.
+                    </p>
+                </div>
+
+                <!-- Navigation Impact -->
+                <div class="current-card bg-white p-8 rounded-3xl shadow-sm border border-slate-100">
+                    <div class="text-4xl mb-4 text-blue-600">&#128674;</div> <!-- Ship -->
+                    <h4 class="text-xl font-bold text-slate-800 mb-3">Marine Navigation</h4>
+                    <p class="text-sm text-slate-500 leading-relaxed">
+                        Ships sailing with the current save time and fuel. Conversely, sailing against a current like the Gulf Stream significantly slows down maritime transit.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: Exam Reference Table -->
+        <section class="bg-slate-900 rounded-3xl p-8 md:p-12 text-white shadow-2xl overflow-hidden relative">
+            <div class="relative z-10">
+                <h2 class="text-2xl font-bold mb-8 text-center">Global Currents Cheat Sheet</h2>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="border-b border-slate-700 text-teal-400 text-xs uppercase tracking-widest font-black">
+                                <th class="py-4 px-4">Current Name</th>
+                                <th class="py-4 px-4">Ocean</th>
+                                <th class="py-4 px-4">Type</th>
+                                <th class="py-4 px-4">Climate Influence</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-slate-300 text-sm">
+                            <tr class="border-b border-slate-800/50 hover:bg-white/5 transition">
+                                <td class="py-4 px-4 font-bold text-white">Gulf Stream</td>
+                                <td class="py-4 px-4">North Atlantic</td>
+                                <td class="py-4 px-4"><span class="text-rose-400">Warm</span></td>
+                                <td class="py-4 px-4">Warms Western Europe</td>
+                            </tr>
+                            <tr class="border-b border-slate-800/50 hover:bg-white/5 transition">
+                                <td class="py-4 px-4 font-bold text-white">Labrador</td>
+                                <td class="py-4 px-4">North Atlantic</td>
+                                <td class="py-4 px-4"><span class="text-blue-400">Cold</span></td>
+                                <td class="py-4 px-4">Brings icebergs to shipping lanes</td>
+                            </tr>
+                            <tr class="border-b border-slate-800/50 hover:bg-white/5 transition">
+                                <td class="py-4 px-4 font-bold text-white">Kuroshio</td>
+                                <td class="py-4 px-4">North Pacific</td>
+                                <td class="py-4 px-4"><span class="text-rose-400">Warm</span></td>
+                                <td class="py-4 px-4">Warms the Japanese coast</td>
+                            </tr>
+                            <tr class="border-b border-slate-800/50 hover:bg-white/5 transition">
+                                <td class="py-4 px-4 font-bold text-white">Peru (Humboldt)</td>
+                                <td class="py-4 px-4">South Pacific</td>
+                                <td class="py-4 px-4"><span class="text-blue-400">Cold</span></td>
+                                <td class="py-4 px-4">Dries the Chilean/Peruvian coast</td>
+                            </tr>
+                            <tr class="hover:bg-white/5 transition">
+                                <td class="py-4 px-4 font-bold text-white">Agulhas</td>
+                                <td class="py-4 px-4">Indian Ocean</td>
+                                <td class="py-4 px-4"><span class="text-rose-400">Warm</span></td>
+                                <td class="py-4 px-4">Affects South African weather</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- Decorative circle -->
+            <div class="absolute -top-24 -right-24 w-64 h-64 bg-teal-500/10 rounded-full blur-3xl"></div>
+        </section>
+
+    </main>
+
+    <footer class="bg-slate-950 text-slate-500 py-16 px-6 text-center text-sm border-t border-slate-900">
+        <div class="max-w-4xl mx-auto space-y-4">
+            <p class="font-bold text-slate-400">Standard English Reference Notes for Social Science</p>
+            <p>Topics Covered: Oceanic Circulation, Temperature Inversion, Marine Ecology, and Human Geography.</p>
+            <div class="flex justify-center gap-6 pt-4 grayscale opacity-50">
+                <span class="text-2xl">&#127754;</span>
+                <span class="text-2xl">&#9973;</span>
+                <span class="text-2xl">&#127757;</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // --- UTILITY: Label Wrapping (Mandatory) ---
+        function wrapLabel(label) {
+            if (typeof label !== 'string') return label;
+            if (label.length <= 16) return label;
+            const words = label.split(' ');
+            const lines = [];
+            let currentLine = words[0];
+            for (let i = 1; i < words.length; i++) {
+                if ((currentLine + " " + words[i]).length <= 16) {
+                    currentLine += " " + words[i];
+                } else {
+                    lines.push(currentLine);
+                    currentLine = words[i];
+                }
+            }
+            lines.push(currentLine);
+            return lines;
+        }
+
+        // Tooltip Shared Logic
+        const tooltipConfig = {
+            callbacks: {
+                title: function(tooltipItems) {
+                    const item = tooltipItems[0];
+                    let label = item.chart.data.labels[item.dataIndex];
+                    return Array.isArray(label) ? label.join(' ') : label;
+                }
+            }
+        };
+
+        // --- CHART 1: Warm vs Cold Current Temp Comparison ---
+        const ctxTemp = document.getElementById('tempChart').getContext('2d');
+        const tempLabels = ['Gulf Stream (W)', 'Peru Current (C)', 'Kuroshio (W)', 'Benguela (C)', 'Brazil Current (W)'];
+        
+        new Chart(ctxTemp, {
+            type: 'bar',
+            data: {
+                labels: tempLabels.map(wrapLabel),
+                datasets: [{
+                    label: 'Avg Surface Temperature (°C)',
+                    data: [27, 16, 26, 17, 25],
+                    backgroundColor: [
+                        '#fb7185', '#3b82f6', '#fb7185', '#3b82f6', '#fb7185'
+                    ],
+                    borderRadius: 8
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: tooltipConfig
+                },
+                scales: {
+                    y: { 
+                        beginAtZero: true,
+                        title: { display: true, text: 'Temperature Celsius' }
+                    }
+                }
+            }
+        });
+
+        // --- CHART 2: Gyre Intensity/Factor Importance (Radar) ---
+        const ctxGyre = document.getElementById('gyreChart').getContext('2d');
+        const factorLabels = ['Wind Push', 'Coriolis Deflection', 'Water Salinity', 'Water Density', 'Continental Shape'];
+        
+        new Chart(ctxGyre, {
+            type: 'radar',
+            data: {
+                labels: factorLabels.map(wrapLabel),
+                datasets: [
+                    {
+                        label: 'Surface Current Drivers',
+                        data: [95, 90, 40, 50, 85],
+                        borderColor: '#0d9488',
+                        backgroundColor: 'rgba(13, 148, 136, 0.2)',
+                        pointBackgroundColor: '#0d9488'
+                    },
+                    {
+                        label: 'Deep Current Drivers',
+                        data: [20, 10, 95, 98, 40],
+                        borderColor: '#1e40af',
+                        backgroundColor: 'rgba(30, 64, 175, 0.2)',
+                        pointBackgroundColor: '#1e40af'
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    tooltip: tooltipConfig,
+                    legend: { position: 'bottom' }
+                },
+                scales: {
+                    r: {
+                        angleLines: { color: '#e2e8f0' },
+                        grid: { color: '#e2e8f0' },
+                        suggestedMin: 0,
+                        suggestedMax: 100,
+                        ticks: { display: false }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
